@@ -1,0 +1,76 @@
+@import "src/colors.scss";
+
+.title-bar {
+  background-color: $black;
+  color: $white;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 4px;
+
+  img {
+    height: 32px;
+    padding-right: 16px;
+  }
+}
+
+.coords-bar {
+  background-color: $lightblack;
+  font-size: small;
+  font-weight: 300;
+  height: 30px;
+  color: $white;
+  font-family: "IBM Plex Mono", monospace;
+  font-style: italic;
+  justify-content: center;
+
+  .spacer {
+    padding-right: 16px;
+  }
+}
+
+table {
+  width: 100%;
+
+  tr:hover {
+    background-color: $grey;
+    cursor: pointer;
+  }
+}
+
+.button-container {
+  margin: 16px;
+
+  display: flex;
+  justify-content: center;
+
+  button {
+
+    color: $white;
+    background-color: $orange;
+  }
+}
+
+.loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-warning {
+  font-size: x-large;
+  margin: 20px;
+  color: $white;
+  line-height: 30px;
+}
+
+.mat-progress-spinner circle, .mat-spinner circle{
+  color: $red;
+}

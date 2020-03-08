@@ -17,10 +17,10 @@ export class AboveService {
   }
 
 
-  getSatellites() {
+  getSatellites(lat: number, long: number) {
     let params: AboveRequest = {
-      observer_lat: 30.4021504,
-      observer_lng: -86.6025472,
+      observer_lat: lat,
+      observer_lng: long,
       observer_alt: 0,
       search_radius: 10,
       category_id: 0

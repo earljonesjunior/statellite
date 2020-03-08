@@ -1,1 +1,126 @@
-<p>tle works!</p>
+<title mat-dialog-title>
+    {{satData.satname}}
+</title>
+<mat-dialog-content>
+    <h2>Satellite Information</h2>
+    <table>
+        <tr>
+            <td class="property">Designator:</td>
+            <td>{{satData.intDesignator}}</td>
+        </tr>
+        <tr> 
+            <td class="property">ID:</td>
+            <td>{{satData.satid}}</td>
+        </tr>
+        <tr>
+            <td class="property">Launch Date:</td>
+            <td>{{satData.launchDate}}</td>
+        </tr>
+        <tr>
+            <td class="property">Lat:</td>
+            <td>{{satData.satlat}}</td>
+        </tr>
+        <tr>
+            <td class="property">Long:</td>
+            <td>{{satData.satlng}}</td>
+        </tr>
+        <tr>
+            <td class="property">Alt:</td>
+            <td>{{satData.satalt | number:'1.0-0'}}</td>
+        </tr>
+    </table>
+
+    <h2>TLE</h2>
+    <p *ngIf="isLoading">Loading...</p>
+    <div class="tle-container" *ngIf="tle">
+
+        <h3>Raw TLE</h3>
+        <pre>{{tle.rawTle}}</pre>
+        <h3>TLE Breakdown</h3>
+
+        <table>
+            <tr>
+                <td class="property">Catalog Number:</td>
+                <td>{{tle.catNumber}}</td>
+            </tr>
+            <tr>
+                <td class="property">Classification:</td>
+                <td>{{tle.class}}</td>
+            </tr>
+            <tr>
+                <td class="property">Designator:</td>
+                <td>{{tle.designator}}</td>
+            </tr>
+            <tr>
+                <td class="property">Epoch Year:</td>
+                <td>{{tle.epochY}}</td>
+            </tr>
+            <tr>
+                <td class="property">Epoch:</td>
+                <td>{{tle.epoch}}</td>
+            </tr>
+            <tr>
+                <td class="property">FDMM:</td>
+                <td>{{tle.fdmm}}</td>
+            </tr>
+            <tr>
+                <td class="property">SDMM:</td>
+                <td>{{tle.sdmm}}</td>
+            </tr>
+            <tr>
+                <td class="property">Drag Term:</td>
+                <td>{{tle.drag}}</td>
+            </tr>
+            <tr>
+                <td class="property">Ephemeris:</td>
+                <td>{{tle.ephemeris}}</td>
+            </tr>
+            <tr>
+                <td class="property">Element Set:</td>
+                <td>{{tle.elementSet}}</td>
+            </tr>
+            <tr>
+                <td class="property">Checksum 1:</td>
+                <td>{{tle.check1}}</td>
+
+            </tr>
+            <!--row 2-->
+            <tr>
+                <td class="property">Inclination:</td>
+                <td>{{tle.incl}}</td>
+            </tr>
+            <tr>
+                <td class="property">RAAN:</td>
+                <td>{{tle.raan}}</td>
+            </tr>
+            <tr>
+                <td class="property">Eccentricity:</td>
+                <td>{{tle.ecce}}</td>
+            </tr>
+            <tr>
+                <td class="property">AoP:</td>
+                <td>{{tle.aop}}</td>
+            </tr>
+            <tr>
+                <td class="property">Mean Anomoaly:</td>
+                <td>{{tle.ma}}</td>
+            </tr>
+            <tr>
+                <td class="property">Mean Motion:</td>
+                <td>{{tle.mm}}</td>
+            </tr>
+            <tr>
+                <td class="property">Revolutions:</td>
+                <td>{{tle.rev}}</td>
+            </tr>
+            <tr>
+                <td class="property">Checksum 2</td>
+                <td>{{tle.check2}}</td>
+            </tr>
+        </table>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close] cdkFocusInitial>Close</button>
+</mat-dialog-actions>
